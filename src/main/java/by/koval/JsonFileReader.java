@@ -6,12 +6,12 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class JsonFileReader {
-    public Set<Ticket> getTicketsFromJson (String fileName) {
-        Set<Ticket> tickets = new HashSet<Ticket>();
+    public List<Ticket> getTicketsFromJson (String fileName) {
+        List<Ticket> tickets = new ArrayList<>();
         Gson gson = new GsonBuilder()
                 .registerTypeAdapter(LocalDate.class, new CustomDateTimeAdapter())
                 .registerTypeAdapter(LocalTime.class, new CustomDateTimeAdapter())
