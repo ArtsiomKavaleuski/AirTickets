@@ -1,7 +1,5 @@
 package by.koval;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
@@ -9,7 +7,7 @@ public class Main {
         System.setProperty("file.encoding", "UTF-8");
         int div = 120;
         List<Ticket> tickets = new JsonFileReader()
-                .getTicketsFromJson("C:\\Users\\kas\\AirTickets\\src\\main\\resources\\tickets.json");
+                .getTicketsFromJson();
 
         List<Ticket> filteredTickets = Calculator.getTicketsFilteredOriginDest(tickets, "VVO", "TLV");
         List<Ticket> minPriceTicketsForEachCarrier = Calculator.getTicketsWithMinTimeOfEachCarrier(filteredTickets);
