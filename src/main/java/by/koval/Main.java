@@ -8,10 +8,8 @@ public class Main {
     public static void main(String[] args) {
         System.setProperty("file.encoding", "UTF-8");
         int div = 120;
-        Path path = Paths.get(System.getProperty("user.dir"), "src/main/resources/tickets.json");
-
         List<Ticket> tickets = new JsonFileReader()
-                .getTicketsFromJson(path.toString());
+                .getTicketsFromJson("C:\\Users\\kas\\AirTickets\\src\\main\\resources\\tickets.json");
 
         List<Ticket> filteredTickets = Calculator.getTicketsFilteredOriginDest(tickets, "VVO", "TLV");
         List<Ticket> minPriceTicketsForEachCarrier = Calculator.getTicketsWithMinTimeOfEachCarrier(filteredTickets);
